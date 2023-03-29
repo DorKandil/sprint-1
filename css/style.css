@@ -1,3 +1,16 @@
 body {
-  background-color: rgb(153, 255, 153);
+  background-color: rgb(90, 227, 90);
+}
+.center td {
+  border: 1px solid;
+  width: 100px;
+  height: 100px;
+}
+.game-board {
+  margin: auto;
+  text-align: center;
+}
+
+.mine {
+  background-color: salmon;
 }

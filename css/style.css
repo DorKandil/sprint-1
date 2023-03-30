@@ -1,16 +1,38 @@
 body {
+  margin-left: 500px;
   background-color: rgb(90, 227, 90);
 }
 .center td {
   border: 1px solid;
   width: 100px;
   height: 100px;
+  display: inline-block;
+  border-radius: 10px;
+  border-color: blue;
+  border-style: groove;
 }
-.game-board {
-  margin: auto;
-  text-align: center;
+
+.selected {
+  background-color: white;
+}
+
+.on-smile {
+  border: 0px;
+  height: 200px;
+  width: 200px;
+  font-size: 100px;
+  background-color: rgb(90, 227, 90);
+}
+
+.lives {
+  font-size: 100px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
 }
 
 .mine {
-  background-color: salmon;
+  font-size: 100px;
 }

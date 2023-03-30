@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Mine Sweeper</title>
   </head>
-  <body onload="onInit()">
+  <body onload="onInit()" onkeyup="flag(event)">
     <h1>Mine Sweeper</h1>
     <table class="center">
       <tbody class="board"></tbody>
     </table>
-
-    <!-- <button onclick="" ></button> -->
-
+    <div class="diff>">
+      <button onclick="sizeMat(4,4)">Easy</button>
+      <button onclick="sizeMat(5,5)">Medium</button>
+      <button onclick="sizeMat(6,6)">Hard</button>
+    </div>
     <script src="js/main.js"></script>
     <script src="js/utils.js"></script>
   </body>

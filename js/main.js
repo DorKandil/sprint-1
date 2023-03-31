@@ -16,54 +16,56 @@ var gBoard;
 var gCell;
 var countMain;
 var gShownCount = 3;
-var gGameOn;
+var gSize = 4;
+var getMat;
 
-function onInit() {
-  gBoard = buildBoard();
+function onInit(bordSize) {
+  gBoard = buildBoard(bordSize);
   renderBoard(gBoard);
   countMain = setMinesNegsCount(gBoard);
-  countMain = checkMinesNesgs(gBoard);
   gGame.isOn = true;
+
   console.log(gBoard);
 }
 
-function onCellClicked(elCell, i, j) {
+function onCellClicked(elCell) {
   if (!gGame.isOn) return;
+
   var mine = document.querySelector(".mine");
   var elSmile = document.querySelector(".on-smile");
-
+  var elCellPoint = elCell.firstElementChild;
+  console.log(elCellPoint);
   elCell.classList.add("selected");
+  elCellPoint.classList.remove("cell-hide");
 
   if (gCell) {
     gCell.classList.remove("selected");
+    gCell = elCell;
   }
-  gCell = elCell;
 
-  if (gCell === mine) {
-    gCell.innerText = MINE;
+  if (elCell === mine) {
+    elCell.innerText = MINE;
     elSmile.innerText = SEDSMAILE;
     gGame.shownCount--;
   }
 }
-
 function checkGameOver() {
-  if (gGame.shownCount < 0) {
-    gGameOn = !gGame.isOn;
+  var elSmile = document.querySelector(".on-smile");
 
-    var elSmile = document.querySelector(".on-smile");
+  if (gGame.shownCount <= 0) {
+    gGame.isOn = !gGame.isOn;
     elSmile.innerText = OVERSMILE;
     gGame.shownCount = 3;
   }
 }
 
-function flag(ev) {}
+function flag(ev) {
+  console.log(ev);
+  ev.innerText = flags;
+}
 
-function onSmile(el) {}
+// LOOP MAIN
 
-window.addEventListener(
-  "contextmenu",
-  function (e) {
-    e.preventDefault();
-  },
-  false
-);
+// Stop - play
+
+//

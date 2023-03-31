@@ -1,19 +1,31 @@
 body {
   margin-left: 500px;
-  background-color: rgb(90, 227, 90);
+  background-image: url("../img/img1.jpg");
+  font-family: Chalkduster, fantasy;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  color: #fdfdfe;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
 }
 .center td {
-  border: 1px solid;
+  border: 5px solid;
   width: 100px;
   height: 100px;
   display: inline-block;
-  border-radius: 10px;
-  border-color: blue;
-  border-style: groove;
+  border-radius: 5px;
+  border-color: black;
+  table-layout: auto;
+  width: 150px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .selected {
-  background-color: white;
+  background-color: rgb(132, 53, 53);
 }
 
 .on-smile {
@@ -21,7 +33,7 @@ body {
   height: 200px;
   width: 200px;
   font-size: 100px;
-  background-color: rgb(90, 227, 90);
+  background-image: url("../img/img1.jpg");
 }
 
 .lives {
@@ -31,8 +43,27 @@ body {
 button {
   height: 50px;
   width: 100px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89e5ff 0%, #5468ff 100%);
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgb(58 65 111 / 50%);
+  padding: 0 32px;
+  border-radius: 6px;
 }
 
 .mine {
   font-size: 100px;
+}
+
+.cell-hide {
+  display: none;
+}
+
+.lives {
+  color: white;
 }

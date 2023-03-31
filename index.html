@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Mine Sweeper</title>
   </head>
-  <body onload="onInit()" onkeyup="flag(event)">
+  <body onload="onInit(4)" onkeydown="flag(event)">
     <h1>Mine Sweeper</h1>
     <table class="center">
       <tbody class="board"></tbody>
     </table>
     <div class="diff>">
-      <button onclick="sizeMat(4,4)">Easy</button>
-      <button onclick="sizeMat(5,5)">Medium</button>
-      <button onclick="sizeMat(6,6)">Hard</button>
+      <button class="easy" onclick="onInit(4)">Easy</button>
+      <button class="medium" onclick="onInit(6)">Medium</button>
+      <button class="hard" onclick="onInit(8)">Hard</button>
     </div>
     <script src="js/main.js"></script>
     <script src="js/utils.js"></script>

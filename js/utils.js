@@ -15,8 +15,8 @@ function createMat(ROWS, COLS) {
   }
   return mat;
 }
-function buildBoard() {
-  var board = createMat(4, 4);
+function buildBoard(bordSize) {
+  var board = createMat(bordSize, bordSize);
   for (var i = 0; i < board.length; i++) {
     board[i] = [];
     for (var j = 0; j < board.length; j++) {
@@ -45,13 +45,14 @@ function renderBoard(board) {
       if (board[i][j].elment === MINE) {
         board[i][j].isMine = true;
       }
-      strHTML += `<td class="${cellClass}"
+      strHTML += `<td class="${cellClass} cell" oncontextmenu="flag(this); return false;"
       onclick="onCellClicked(this)"> 
+      <span class="cell-point-${i}-${j} cell-hide"> </span>
       </td>`;
     }
     strHTML += "</tr>";
   }
-  strHTML += `<button class="on-smile"  onclick="onInit()"onSmile(this)">${SMAILE}</button>`;
+  strHTML += `<button class="on-smile"  onclick="onInit(4)"onSmile(this)">${SMAILE}</button>`;
 
   strHTML += `<div class="lives">${LIVE}${gGame.shownCount}</div>`;
 
@@ -80,11 +81,9 @@ function setMinesNegsCount(board, rowIdx, colIdx) {
       if (i === rowIdx && j === colIdx) continue;
 
       if (board[i][j].isMine) {
-        board[i][j].minesAroundCount = 0;
       }
       board[i][j].minesAroundCount++;
-      var cell = document.querySelector(`.cell-${i}-${j}`);
-      console.log(cell);
+      var cell = document.querySelector(`.cell-point-${i}-${j}`);
       cell.innerText = +board[i][j].minesAroundCount;
     }
   }
@@ -108,4 +107,6 @@ function checkMinesNesgs(board) {
   }
 }
 
-function sizeMat(el) {}
+function sizeMatl() {
+  console.log(el);
+}
